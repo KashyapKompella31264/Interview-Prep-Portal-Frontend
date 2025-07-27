@@ -17,7 +17,7 @@ const InstructorViewStudents = () => {
                 setError(null);
                 
                 const res = await fetch(
-                    `http://localhost:8090/instructors/student/getallstudents`,
+                    `https://interview-prep-portal-backend-application.onrender.com/instructors/student/getallstudents`,
                     {
                         method: 'GET',
                         headers: {
@@ -55,7 +55,7 @@ const InstructorViewStudents = () => {
             setError(null);
             
             const res = await fetch(
-                `http://localhost:8090/instructors/student/${searchId}`,
+                `https://interview-prep-portal-backend-application.onrender.com/instructors/student/${searchId}`,
                 {
                     method: 'GET',
                     headers: {
@@ -91,7 +91,7 @@ const InstructorViewStudents = () => {
             setError(null);
             
             const res = await fetch(
-                `http://localhost:8090/instructors/student/getallstudents`,
+                `https://interview-prep-portal-backend-application.onrender.com/instructors/student/getallstudents`,
                 {
                     method: 'GET',
                     headers: {

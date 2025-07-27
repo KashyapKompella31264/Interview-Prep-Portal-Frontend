@@ -30,7 +30,7 @@ const ManageQuestions = () => {
 
   const fetchQuestions = async () => {
     try {
-      const res = await fetch("http://localhost:8090/admin/questions", {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/questions`, {
         method:'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ const ManageQuestions = () => {
       return;
     }
     try {
-      const res = await fetch(`http://localhost:8090/admin/questions/${searchId}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/questions/${searchId}`, {
         method:'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ const ManageQuestions = () => {
     if(!window.confirm("Are you sure want to Delete this Testcase!!!")) return;
     {console.log(tc)}
     try{
-      const res= await fetch(`http://localhost:8090/admin/testcase/delete/${qid}`,{
+      const res= await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/testcase/delete/${qid}`,{
         method:'POST',
         headers:{
           "Content-Type":"application/json",
@@ -99,7 +99,7 @@ const ManageQuestions = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this question?")) return;
     try {
-      const res = await fetch(`http://localhost:8090/admin/questions/${id}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/questions/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -144,7 +144,7 @@ const ManageQuestions = () => {
       } = editedQuestion;
       console.log("id is",editedQuestion.id);
       // 1. Update the question details
-      const updateResponse = await fetch(`http://localhost:8090/admin/questions/${editedQuestion.id}`, {
+      const updateResponse = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/questions/${editedQuestion.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ const ManageQuestions = () => {
       );
   
       if (newTestCases && newTestCases.length > 0) {
-        const testCaseResponse = await fetch(`http://localhost:8090/admin/${editedQuestion.id}/addTestCases`, {
+        const testCaseResponse = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/${editedQuestion.id}/addTestCases`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -199,7 +199,7 @@ const ManageQuestions = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:8090/admin/questions", {
+      const res = await fetch("https://interview-prep-portal-backend-application.onrender.com/admin/questions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -21,7 +21,7 @@ const ViewCourses = () => {
 
   const fetchAllCourses = async () => {
     try {
-      const response = await fetch('http://localhost:8090/admin/courses', {
+      const response = await fetch('https://interview-prep-portal-backend-application.onrender.com/admin/courses', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await response.json();
@@ -33,7 +33,7 @@ const ViewCourses = () => {
 
   const fetchSubtopics = async (courseId) => {
     try {
-      const response = await fetch(`http://localhost:8090/admin/courses/${courseId}/subtopics`, {
+      const response = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/courses/${courseId}/subtopics`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (!response.ok) throw new Error('Error fetching subtopics');
@@ -46,7 +46,7 @@ const ViewCourses = () => {
 
   const fetchCourseById = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8090/admin/courses/${id}`, {
+      const response = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/courses/${id}`, {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -83,7 +83,7 @@ const ViewCourses = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:8090/admin/courses/${id}`, {
+      await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/courses/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -114,7 +114,7 @@ const ViewCourses = () => {
         subTopics: formData.subTopics.split(',').map(id => id.trim())
       };
 
-      await fetch(`http://localhost:8090/admin/courses/${selectedCourse.id}`, {
+      await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/courses/${selectedCourse.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ const ViewCourses = () => {
         instructors: formData.instructors.split(',').map(id => id.trim())
       };
 
-      await fetch('http://localhost:8090/admin/courses', {
+      await fetch('https://interview-prep-portal-backend-application.onrender.com/admin/courses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

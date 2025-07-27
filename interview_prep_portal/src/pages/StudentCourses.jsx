@@ -23,7 +23,7 @@ const StudentCourses = () => {
                 const decodedToken = jwtDecode(token);
                 const studentId = decodedToken.id;
 
-                const response = await fetch(`http://localhost:8090/student/${studentId}/courses`, {
+                const response = await fetch(`https://interview-prep-portal-backend-application.onrender.com/student/${studentId}/courses`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,

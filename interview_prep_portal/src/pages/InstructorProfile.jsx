@@ -32,7 +32,7 @@ const InstructorProfile = () => {
     };
 
     const fetchInstructor = async () => {
-        const res = await fetch(`http://localhost:8090/instructors/${instructorId}`, {
+        const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/instructors/${instructorId}`, {
             method: 'POST', // Changed from POST to GET (since we're fetching data)
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -44,7 +44,7 @@ const InstructorProfile = () => {
     };
 
     const fetchInstructorCourses = async () => {
-        const res = await fetch(`http://localhost:8090/instructors/getinstructorcourses/${instructorId}`, {
+        const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/instructors/getinstructorcourses/${instructorId}`, {
             method: 'POST', // Changed from POST to GET (since we're fetching data)
             headers: {
                 Authorization: `Bearer ${token}`,

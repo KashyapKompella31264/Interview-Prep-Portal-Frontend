@@ -26,7 +26,7 @@ const InstructorViewQuestion = () => {
                 setError(null);
                 
                 const res = await fetch(
-                    `http://localhost:8090/instructors/questions/${questionId}`, 
+                    `https://interview-prep-portal-backend-application.onrender.com/instructors/questions/${questionId}`, 
                     {
                         method: "GET",
                         headers: {
@@ -99,7 +99,7 @@ const InstructorViewQuestion = () => {
             setError(null);
             
             const res = await fetch(
-                `http://localhost:8090/instructors/question/${questionId}`, 
+                `https://interview-prep-portal-backend-application.onrender.com/instructors/question/${questionId}`, 
                 {
                     method: "PUT",
                     headers: {

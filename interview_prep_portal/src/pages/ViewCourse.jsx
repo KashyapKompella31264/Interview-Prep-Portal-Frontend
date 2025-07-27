@@ -40,7 +40,7 @@ const ViewCourse = () => {
                 }
 
                 // Fetch course details
-                const courseResponse = await fetch(`http://localhost:8090/student/courses/${courseId}`, {
+                const courseResponse = await fetch(`https://interview-prep-portal-backend-application.onrender.com/student/courses/${courseId}`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ const ViewCourse = () => {
                 if (courseData.subTopics && Array.isArray(courseData.subTopics)) {
                     const subTopicDetails = await Promise.all(
                         courseData.subTopics.map(async (subTopicId) => {
-                            const response = await fetch(`http://localhost:8090/student/getsubtopic/${subTopicId}`, {
+                            const response = await fetch(`https://interview-prep-portal-backend-application.onrender.com/student/getsubtopic/${subTopicId}`, {
                                 method: "GET",
                                 headers: {
                                     Authorization: `Bearer ${token}`,
@@ -104,7 +104,7 @@ const ViewCourse = () => {
                 setError("No token. Authorization required.");
                 return;
             }
-            const response = await fetch(`http://localhost:8090/student/getquestion/${questionId}`, {
+            const response = await fetch(`https://interview-prep-portal-backend-application.onrender.com/student/getquestion/${questionId}`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -123,7 +123,7 @@ const ViewCourse = () => {
 
     const fetchAnnouncements = async () => {
         try {
-            const res = await fetch(`http://localhost:8090/student/getannouncements/course/${courseId}`, {
+            const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/student/getannouncements/course/${courseId}`, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -137,7 +137,7 @@ const ViewCourse = () => {
 
         await Promise.all(uniqueInstructorIds.map(async (id) => {
             if (!fetchedMap[id]) {
-                const response = await fetch(`http://localhost:8090/student/getinstructor/${id}`, {
+                const response = await fetch(`https://interview-prep-portal-backend-application.onrender.com/student/getinstructor/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         "Content-Type": "application/json"

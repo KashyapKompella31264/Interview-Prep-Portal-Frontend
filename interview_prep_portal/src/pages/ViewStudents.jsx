@@ -28,7 +28,7 @@ const ViewStudents = () => {
 
   const fetchAllStudents = async () => {
     try {
-      const res = await fetch('http://localhost:8090/admin/getstudents', {
+      const res = await fetch('https://interview-prep-portal-backend-application.onrender.com/admin/getstudents', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -45,7 +45,7 @@ const ViewStudents = () => {
     }
   
     try {
-      const res = await fetch(`http://localhost:8090/admin/student/${searchId}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/student/${searchId}`, {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -80,7 +80,7 @@ const ViewStudents = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       try {
-        const res = await fetch(`http://localhost:8090/admin/student/${id}`, {
+        const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/student/${id}`, {
           method: 'DELETE',
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -106,7 +106,7 @@ const ViewStudents = () => {
 
   const handleSaveEdit = async () => {
     try {
-      const res = await fetch(`http://localhost:8090/admin/student/${formData.id}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/student/${formData.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ const ViewStudents = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:8090/admin/student', {
+      const res = await fetch('https://interview-prep-portal-backend-application.onrender.com/admin/student', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

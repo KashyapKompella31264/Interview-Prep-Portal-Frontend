@@ -17,7 +17,7 @@ const CourseDetails = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `http://localhost:8090/student/courses/${id}`,
+          `https://interview-prep-portal-backend-application.onrender.com/student/courses/${id}`,
           {
             method: "GET",
             headers: {
@@ -53,7 +53,7 @@ const CourseDetails = () => {
 
       const studentId = jwtDecode(token).id;
       const response = await fetch(
-        `http://localhost:8090/student/courses/${id}/registercourse/${studentId}`,
+        `https://interview-prep-portal-backend-application.onrender.com/student/courses/${id}/registercourse/${studentId}`,
         {
           method: "POST",
           headers: {

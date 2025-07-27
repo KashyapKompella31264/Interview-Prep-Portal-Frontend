@@ -35,7 +35,7 @@ const ManageSubTopics = () => {
 
   const fetchSubtopics = async () => {
     try {
-      const res = await fetch("http://localhost:8090/admin/getsubtopics", {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/getsubtopics`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -50,7 +50,7 @@ const ManageSubTopics = () => {
     if (!searchId.trim()) return alert("Please enter a Subtopic ID");
 
     try {
-      const res = await fetch(`http://localhost:8090/admin/subtopic/${searchId}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/subtopic/${searchId}`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -65,7 +65,7 @@ const ManageSubTopics = () => {
 
   const handleViewSubtopic = async (id) => {
     try {
-      const res = await fetch(`http://localhost:8090/admin/subtopic/${id}`,{
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/subtopic/${id}`,{
         method:'POST',
         headers:{Authorization:`Bearer ${token}`},
       }
@@ -77,7 +77,7 @@ const ManageSubTopics = () => {
       // Fetch all question objects from the list of IDs
       const questionDetails = {};
       for (let qId of fetchedSubtopic.questions) {
-        const qRes = await fetch(`http://localhost:8090/admin/questions/${qId}`,{
+        const qRes = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/questions/${qId}`,{
           method:'POST',
           headers:{Authorization:`Bearer ${token}`},
         });
@@ -93,7 +93,7 @@ const ManageSubTopics = () => {
     console.log("Subtopic to be added is:",subtopicId);
     console.log("Question to be added is: ",questionId);
     try{
-      const res=await fetch(`http://localhost:8090/admin/subtopic/${subtopicId}/questions/${questionId}`,{
+      const res=await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/subtopic/${subtopicId}/questions/${questionId}`,{
         method:'POST',
         headers:{
           Authorization:`Bearer ${token}`,
@@ -115,7 +115,7 @@ const ManageSubTopics = () => {
   const handleQuestionUpdate = async (questionId, updatedData) => {
     console.log("Updated Data",updatedData);
     try {
-      const res = await fetch(`http://localhost:8090/admin/questions/${questionId}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/questions/${questionId}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -142,7 +142,7 @@ const ManageSubTopics = () => {
     if (!window.confirm("Are you sure you want to delete this question?")) return;
     
     try {
-      const res = await fetch(`http://localhost:8090/admin/removequestionfromsubtopic/${subtopicId}/${questionId}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/removequestionfromsubtopic/${subtopicId}/${questionId}`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -166,7 +166,7 @@ const ManageSubTopics = () => {
 
   const handleSubtopicUpdate = async () => {
     try {
-      const res = await fetch(`http://localhost:8090/admin/subtopic/${subtopic.id}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/subtopic/${subtopic.id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -192,7 +192,7 @@ const ManageSubTopics = () => {
     if (!window.confirm("Are you sure you want to delete this subtopic?")) return;
 
     try {
-      const res = await fetch(`http://localhost:8090/admin/subtopic/${subtopicId}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/subtopic/${subtopicId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

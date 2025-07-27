@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { jwtDecode } from 'jwt-decode';
 import StudentNavbar from '../components/StudentNavbar';
-import { FiUser, FiMail, FiPhone, FiMapPin, FiEdit } from 'react-icons/fi';
+import { FiUser, FiMail, FiPhone, FiMapPin, FiEdit ,FiAlertTriangle } from 'react-icons/fi';
 
 const ViewStudentProfile = () => {
   const [error, setError] = useState('');
@@ -15,7 +15,7 @@ const ViewStudentProfile = () => {
     const fetchProfile = async () => {
       try {
 
-        const response = await fetch(`http://localhost:8090/student/${studentId}`, {
+        const response = await fetch(`https://interview-prep-portal-backend-application.onrender.com/student/${studentId}`, {
           method: 'GET',
           headers: { 'Authorization': `Bearer ${token}` },
         });
@@ -37,7 +37,7 @@ const ViewStudentProfile = () => {
   }, []);
   const handlesave = async () =>{
     try{
-      const res=await fetch(`http://localhost:8090/student/updatestudent/${studentId}`,{
+      const res=await fetch(`https://interview-prep-portal-backend-application.onrender.com/student/updatestudent/${studentId}`,{
         method:'PUT',
         headers:{
           Authorization:`Bearer ${token}`,
@@ -68,7 +68,7 @@ const ViewStudentProfile = () => {
           </h1>
           {error && (
             <div className="error-message">
-              <FiAlertTriangle /> {error}
+              {/* <FiAlertTriangle />  */}{error}
             </div>
           )}
         </div>

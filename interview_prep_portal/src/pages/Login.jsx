@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8090/auth/login', {
+      const response = await fetch('https://interview-prep-portal-backend-application.onrender.com/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const Login = () => {
           </div>
 
           <button type="submit" className="auth-button">
-            Sign In <FiArrowRight />
+            Log In <FiArrowRight />
           </button>
         </form>
 

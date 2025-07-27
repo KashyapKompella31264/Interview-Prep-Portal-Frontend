@@ -8,7 +8,7 @@ const StudentNavbar = () => {
     navigate('/login');
   }
   return (
-    <nav className="student-navbar">
+    <nav className="instructor-navbar">
       <div className="nav-container">
         <Link to="/studenthome" className="nav-brand">
           <FiHome className="nav-icon" />

@@ -38,7 +38,7 @@ const ViewQuestion = () => {
                     return;
                 }
 
-                const response = await fetch(`http://localhost:8090/student/getquestion/${questionId}`, {
+                const response = await fetch(`https://interview-prep-portal-backend-application.onrender.com/student/getquestion/${questionId}`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -65,7 +65,7 @@ const ViewQuestion = () => {
             if (!token) return setError("Authorization required. Please log in.");
 
             const response = await axios.post(
-                "http://localhost:8090/api/execute",
+                "https://interview-prep-portal-backend-application.onrender.com/api/execute",
                 { code, language, questionId, input },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

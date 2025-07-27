@@ -24,7 +24,7 @@ const ViewInstructors = () => {
 
   const fetchAllInstructors = async () => {
     try {
-      const res = await fetch('http://localhost:8090/admin/instructors', {
+      const res = await fetch('https://interview-prep-portal-backend-application.onrender.com/admin/instructors', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -37,7 +37,7 @@ const ViewInstructors = () => {
   const handleSearch = async () => {
     if (!searchId.trim()) return fetchAllInstructors();
     try {
-      const res = await fetch(`http://localhost:8090/admin/instructor/${searchId}`, {
+      const res = await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/instructor/${searchId}`, {
         method:'POST',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -63,7 +63,7 @@ const ViewInstructors = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this instructor?')) {
       try {
-        await fetch(`http://localhost:8090/admin/instructors/${id}`, {
+        await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/instructors/${id}`, {
           method: 'DELETE',
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -81,7 +81,7 @@ const ViewInstructors = () => {
 
   const handleSaveEdit = async () => {
     try {
-      await fetch(`http://localhost:8090/admin/instructors/${formData.id}`, {
+      await fetch(`https://interview-prep-portal-backend-application.onrender.com/admin/instructors/${formData.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const ViewInstructors = () => {
     }
 
     try {
-      await fetch('http://localhost:8090/admin/instructors', {
+      await fetch('https://interview-prep-portal-backend-application.onrender.com/admin/instructors', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

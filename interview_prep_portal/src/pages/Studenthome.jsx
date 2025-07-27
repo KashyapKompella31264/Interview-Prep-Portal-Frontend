@@ -11,7 +11,7 @@ const Studenthome = () => {
     const fetchCourses = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:8090/student/courses', {
+        const response = await fetch(`http://localhost:8090/student/courses`, {
           method: 'GET',
           headers: { 'Authorization': `Bearer ${token}` },
         });
@@ -34,10 +34,11 @@ const Studenthome = () => {
   }, []);
 
   return (
-    <div className="student-home">
+    
+    <div className="instructor-home">
       <StudentNavbar />
       
-      <main className="course-container">
+      <main >
         <div className="course-header">
           <h1>Your Learning Journey</h1>
           {error && <div className="error-message">{error}</div>}

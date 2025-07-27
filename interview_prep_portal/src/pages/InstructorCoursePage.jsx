@@ -34,7 +34,7 @@ const InstructorCoursePage = () => {
     const fetchCourseData = async () => {
       try {
         setLoading(prev => ({ ...prev, course: true }));
-        const courseRes = await fetch(`http://localhost:8090/instructors/courses/${courseId}`, {
+        const courseRes = await fetch(`https://interview-prep-portal-backend-application.onrender.com/instructors/courses/${courseId}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ const InstructorCoursePage = () => {
       setLoading(prev => ({ ...prev, subtopics: true }));
       
       const subtopicPromises = subtopicIds.map(id =>
-        fetch(`http://localhost:8090/instructors/subtopic/${id}`, {
+        fetch(`https://interview-prep-portal-backend-application.onrender.com/instructors/subtopic/${id}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -83,7 +83,7 @@ const InstructorCoursePage = () => {
       for (const subtopic of subtopicsData) {
         if (subtopic.questions?.length > 0) {
           const questionPromises = subtopic.questions.map(qId =>
-            fetch(`http://localhost:8090/instructors/questions/${qId}`, {
+            fetch(`https://interview-prep-portal-backend-application.onrender.com/instructors/questions/${qId}`, {
               method: 'GET',
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -114,7 +114,7 @@ const InstructorCoursePage = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:8090/instructors/subtopic/${subtopicId}/question/${questionId}`,
+        `https://interview-prep-portal-backend-application.onrender.com/instructors/subtopic/${subtopicId}/question/${questionId}`,
         {
           method: 'POST',
           headers: {
@@ -143,7 +143,7 @@ const InstructorCoursePage = () => {
       setError(null);
       
       const res = await fetch(
-        `http://localhost:8090/instructors/course/${courseId}/getstudents`,
+        `https://interview-prep-portal-backend-application.onrender.com/instructors/course/${courseId}/getstudents`,
         {
           method: 'GET',
           headers: {
@@ -167,7 +167,7 @@ const InstructorCoursePage = () => {
   const fetchStudentDetails = async (studentIds) => {
     try {
       const studentDetailsPromises = studentIds.map(studentId =>
-        fetch(`http://localhost:8090/instructors/student/${studentId}`, {
+        fetch(`https://interview-prep-portal-backend-application.onrender.com/instructors/student/${studentId}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -189,7 +189,7 @@ const InstructorCoursePage = () => {
       setError(null);
       
       const res = await fetch(
-        `http://localhost:8090/instructors/announcements/${courseId}`,
+        `https://interview-prep-portal-backend-application.onrender.com/instructors/announcements/${courseId}`,
         {
           method: 'GET',
           headers: {
@@ -224,7 +224,7 @@ const InstructorCoursePage = () => {
       };
 
       const res = await fetch(
-        `http://localhost:8090/instructors/announcements/addannouncement`,
+        `https://interview-prep-portal-backend-application.onrender.com/instructors/announcements/addannouncement`,
         {
           method: 'POST',
           headers: {

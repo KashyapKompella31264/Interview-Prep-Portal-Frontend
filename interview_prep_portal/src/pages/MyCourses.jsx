@@ -21,7 +21,7 @@ const MyCourses = () => {
         try {
             setLoading(true);
             const response = await fetch(
-                `http://localhost:8090/instructors/getinstructorcourses/${instructorId}`,
+                `https://interview-prep-portal-backend-application.onrender.com/instructors/getinstructorcourses/${instructorId}`,
                 {
                     method: 'POST', // Changed from POST to GET (since we're fetching data)
                     headers: {

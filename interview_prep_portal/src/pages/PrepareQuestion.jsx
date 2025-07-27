@@ -29,7 +29,7 @@ const PrepareQuestion = () => {
   const fetchAllQuestions = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8090/instructors/questions", {
+      const res = await fetch("https://interview-prep-portal-backend-application.onrender.com/instructors/questions", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -98,8 +98,8 @@ const PrepareQuestion = () => {
     try {
       const res = await fetch(
         editMode
-          ? `http://localhost:8090/instructors/question/${editingQuestionId}`
-          : "http://localhost:8090/instructors/questions",
+          ? `https://interview-prep-portal-backend-application.onrender.com/instructors/question/${editingQuestionId}`
+          : "https://interview-prep-portal-backend-application.onrender.com/instructors/questions",
         {
           method: editMode ? "PUT" : "POST",
           headers: {
